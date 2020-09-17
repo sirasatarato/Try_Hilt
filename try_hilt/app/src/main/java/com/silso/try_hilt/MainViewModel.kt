@@ -27,10 +27,9 @@ class MainViewModel @ViewModelInject constructor(private val apiService: ApiServ
                 }
             }
         }
-
     }
 
-    suspend fun getUserRequest(id: Int): Result<UserData> {
+    private suspend fun getUserRequest(id: Int): Result<UserData> {
         return safeApiCall(call = { apiService.getUserInfo(id) })
     }
 }
